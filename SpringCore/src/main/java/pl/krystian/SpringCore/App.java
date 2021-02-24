@@ -18,5 +18,6 @@ public class App
     	
     	Tyre tyre = (Tyre) context.getBean("tyre");
     	System.out.println("Brand of tyre is: " + tyre.getBrand());
+    	System.out.println("Tyre size is: " + tyre.getSize());
     }
 }

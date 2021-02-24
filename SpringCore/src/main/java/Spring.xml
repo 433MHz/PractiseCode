@@ -12,6 +12,7 @@
     
     <bean id="tyre" class="pl.krystian.SpringCore.Tyre">
     	<property name="brand" value="MRF"></property>
+    	<constructor-arg value="27"></constructor-arg>
     </bean>
 
 </beans>
