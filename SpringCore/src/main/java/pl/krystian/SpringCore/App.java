@@ -8,6 +8,11 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+    	Vehicle vehicle = new Bike();
+    	
+    	
+    	vehicle.turnOn();
+    	vehicle.drive();
+    	vehicle.turnOff();
     }
 }
