@@ -10,14 +10,11 @@ public class App
     {
     	ApplicationContext context = new ClassPathXmlApplicationContext("Spring.xml");
     	
-    	Vehicle obj = (Vehicle) context.getBean("bike");
+    	Vehicle obj = (Vehicle) context.getBean("car");
     	obj.turnOn();
     	obj.drive();
     	obj.turnOff();
     	
     	
-    	Tyre tyre = (Tyre) context.getBean("tyre");
-    	System.out.println("Brand of tyre is: " + tyre.getBrand());
-    	System.out.println("Tyre size is: " + tyre.getSize());
     }
 }
