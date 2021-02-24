@@ -14,5 +14,9 @@ public class App
     	obj.turnOn();
     	obj.drive();
     	obj.turnOff();
+    	
+    	
+    	Tyre tyre = (Tyre) context.getBean("tyre");
+    	System.out.println("Brand of tyre is: " + tyre.getBrand());
     }
 }

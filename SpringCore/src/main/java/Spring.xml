@@ -9,5 +9,9 @@
 
     <context:annotation-config/>
     <context:component-scan base-package="pl.krystian.SpringCore"></context:component-scan>
+    
+    <bean id="tyre" class="pl.krystian.SpringCore.Tyre">
+    	<property name="brand" value="MRF"></property>
+    </bean>
 
 </beans>
