@@ -10,7 +10,7 @@ public class App
     {
     	ApplicationContext context = new ClassPathXmlApplicationContext("Spring.xml");
     	
-    	Vehicle obj = (Vehicle) context.getBean("vehicle");
+    	Vehicle obj = (Vehicle) context.getBean("bike");
     	obj.turnOn();
     	obj.drive();
     	obj.turnOff();
