@@ -1,20 +1,18 @@
 package pl.krystian.SpringCore;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class App 
 {
     public static void main( String[] args )
-    {
-    	ApplicationContext context = new ClassPathXmlApplicationContext("Spring.xml");
+    {    	
+    	ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
     	
-    	Vehicle obj = (Vehicle) context.getBean("car");
-    	obj.turnOn();
-    	obj.drive();
-    	obj.turnOff();
+    	Phone phone =(Phone) context.getBean(Phone.class);
     	
-    	
+    	System.out.println(phone.getPhone());
     }
 }
