@@ -1,60 +1,37 @@
 package pl.krystian.MockitoTesting;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.BDDMockito.*;
 import org.junit.jupiter.api.Test;
-import static org.mockito.Mockito.*;
 
-public class CalculatorTest {
-	
+class CalculatorTest {
+
 	@Test
-	public void add_two_numbers() {
+	void get_given_numbers() {
 		
 		//given
-			Calculator calculator = new Calculator();
+		Calculator calculator = new Calculator();
+		GiveNumber10 giveNumber10 = mock(GiveNumber10.class);
+		GiveNumber5 giveNumber5 = mock(GiveNumber5.class);
+		
+		given(giveNumber10.give()).willReturn(setUpGive10());
+		given(giveNumber5.give()).willReturn(setUpGive5());
+		
 		//when
-			int result = calculator.add(10, 15);
+		int result = calculator.addTwoGiven(giveNumber10, giveNumber5);
+		
 		//then
-			assertEquals(25, result);
+		System.out.println(result);
+		assertEquals(result, 50);
 	}
 	
-	@Test
-	public void add_no_two_numbers() {
-		
-		//given
-			Calculator calculator = new Calculator();
-		//when
-			
-		//then
-			assertNotEquals(20 , calculator.add(5,10));
+	private int setUpGive5() {
+		return 30;
 	}
 	
-	@Test
-	public void divide_two_numbers() {
-		
-		//given
-			Calculator calculator = new Calculator();
-		//when
-			int result = calculator.divide(10, 5);
-		//then 
-			assertEquals(2, result);
-	}
 	
-	@Test
-	public void add_random_number() {
-		
-		//given
-			Calculator calculator = new Calculator();
-			RandomNum randomNum = mock(RandomNum.class);
-			when(randomNum.get()).thenReturn(getNumber());
-		//when
-			int first = randomNum.get();
-		//then
-			assertEquals(calculator.add(first, 10), 20);
+	private int setUpGive10() {
+		return 20;
 	}
-	
-	private int getNumber() {
-		return 10;
-	}
+
 }
