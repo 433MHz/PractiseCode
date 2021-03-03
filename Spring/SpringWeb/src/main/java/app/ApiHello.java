@@ -19,13 +19,20 @@ public class ApiHello {
 	
 	
 	@Autowired
-	public ApiHello(FirstCarListAdder first, SecondCarListAdder second, CarList list) {
+	public void setFirst(FirstCarListAdder first) {
 		this.first = first;
+	}
+
+	@Autowired
+	public void setSecond(SecondCarListAdder second) {
 		this.second = second;
+	}
+
+	@Autowired
+	public void setList(CarList list) {
 		this.list = list;
 	}
-	
-	
+
 	@GetMapping(value = "/runFirst")
 	public String addFirstCar() {
 		Car car = new Car("VW", "Polo");
