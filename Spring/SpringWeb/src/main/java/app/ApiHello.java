@@ -13,14 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/rest")
 public class ApiHello {
 
-	@Autowired
-	FirstCarListAdder first;
+	private FirstCarListAdder first;
+	private SecondCarListAdder second;
+	private CarList list;
+	
 	
 	@Autowired
-	SecondCarListAdder second;
+	public ApiHello(FirstCarListAdder first, SecondCarListAdder second, CarList list) {
+		this.first = first;
+		this.second = second;
+		this.list = list;
+	}
 	
-	@Autowired
-	CarList list;
 	
 	@GetMapping(value = "/runFirst")
 	public String addFirstCar() {
