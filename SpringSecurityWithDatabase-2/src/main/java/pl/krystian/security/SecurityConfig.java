@@ -20,6 +20,8 @@ public class SecurityConfig {
 		this.userDetailsService = userDetailsService;
 	}
 	
+	
+	
 	@Bean
 	public AuthenticationProvider authenticationProvider() {
 		
